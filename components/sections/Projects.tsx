@@ -20,10 +20,6 @@ export function Projects() {
           </li>
         ))}
       </ul>
-      <p className="mt-8 font-mono text-xs text-text-faint">
-        {/* helper note — удалите после заполнения data/projects.json */}
-        ↳ Карточки-заглушки. Контент — в <code>data/projects.json</code>.
-      </p>
     </Section>
   );
 }

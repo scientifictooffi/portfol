@@ -27,13 +27,11 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  // TODO: замените при деплое
   title: `${profile.name} — ${profile.role}`,
-  description:
-    "Премиальное портфолио разработчика. Замените метаданные в app/layout.tsx.",
+  description: profile.tagline,
   openGraph: {
     title: `${profile.name} — ${profile.role}`,
-    description: "Портфолио разработчика.",
+    description: profile.tagline,
     type: "website",
   },
 };

@@ -1,9 +1,5 @@
 /**
- * ──────────────────────────────────────────────────────────────────────────
- *  PROFILE — единственное место для личных данных.
- *  Замените значения в [квадратных скобках] и поля, помеченные TODO.
- *  Ничего не выдумано: всё, что нужно заполнить, — явный placeholder.
- * ──────────────────────────────────────────────────────────────────────────
+ * PROFILE — источник личных данных (из CV Yerlan Aubakirov).
  */
 
 export type SocialLink = {
@@ -32,40 +28,46 @@ export type Profile = {
   /** основной стек — рендерится в hero и в About */
   stack: string[];
   socials: SocialLink[];
-  /** ссылка на резюме/CV (TODO: добавьте файл в /public или внешний URL) */
+  /** ссылка на резюме/CV */
   resumeUrl: string;
 };
 
 export const profile: Profile = {
-  name: "[ВАШЕ ИМЯ]",
-  role: "[РОЛЬ]", // напр. "Frontend Engineer", "Full-Stack Developer"
+  name: "Yerlan Aubakirov",
+  role: "React Native / Front-End Developer",
   tagline:
-    "[Короткое позиционирование — чем вы полезны и для кого. 1–2 предложения.]",
-  accentWord: "[ключевое слово]", // напр. "надёжные", "продуктовые"
+    "Собираю production-приложения для iOS и Android: live-commerce, платежи и realtime-фичи с фокусом на скорость и стабильность.",
+  accentWord: "продакшен",
   availability: {
     open: true,
-    label: "Открыт к предложениям", // TODO: или "Сейчас занят"
+    label: "Открыт к предложениям",
   },
-  location: "[Город, Страна]",
-  email: "[email@example.com]",
+  location: "Astana, Kazakhstan",
+  email: "yerlanaubakirovvv@gmail.com",
   about: [
-    "[Абзац 1 — кто вы и чем занимаетесь. Конкретно: специализация, годы опыта, домены.]",
-    "[Абзац 2 — как вы работаете, что цените в инженерии, чем выделяетесь.]",
-    "[Абзац 3 (необязательно) — интересы вне кода / к чему стремитесь.]",
+    "Junior React Native / Front-End разработчик с опытом live-commerce платформ, интеграции платежей (EPAY) и международных проектов. Пишу на React, React Native и TypeScript; базово — Node.js и SQL.",
+    "В SoftSale развиваю FBSM Live для южнокорейского холдинга Fashion Brand Square: стриминг, чат и checkout в одном приложении для 5 000+ пользователей. Ускорил загрузку экранов на ~20% за счёт оптимизации API и кэша.",
+    "BSc Software Engineering (Astana IT University, Honours, GPA 3.72), сейчас MSc Information Systems. Сертификаты: EPAM Front-End, AWS Cloud Foundations; английский — B2 (IELTS 6.0).",
   ],
   stack: [
     "TypeScript",
+    "React Native",
     "React",
     "Next.js",
-    "Node.js",
-    "[ваш инструмент]",
-    "[ваш инструмент]",
+    "Redux",
+    "REST / WebSocket",
   ],
   socials: [
-    { label: "GitHub", href: "[https://github.com/username]", primary: true },
-    { label: "LinkedIn", href: "[https://linkedin.com/in/username]", primary: true },
-    { label: "Telegram", href: "[https://t.me/username]" },
-    { label: "X / Twitter", href: "[https://x.com/username]" },
+    {
+      label: "GitHub",
+      href: "https://github.com/scientifictooffi",
+      primary: true,
+    },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/tadamsk",
+      primary: true,
+    },
   ],
-  resumeUrl: "[/resume.pdf]", // TODO: положите файл в /public или укажите URL
+  resumeUrl: "/resume.pdf",
 };

@@ -5,8 +5,8 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="mx-auto flex w-full max-w-content flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p className="font-mono text-xs text-text-faint">
-          © <span suppressHydrationWarning>{"[год]"}</span> {profile.name}. Собрано на
-          Next.js + Tailwind.
+          © {new Date().getFullYear()} {profile.name}. Собрано на Next.js +
+          Tailwind.
         </p>
         <ul className="flex flex-wrap gap-x-5 gap-y-1">
           {profile.socials
