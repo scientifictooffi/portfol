@@ -14,7 +14,7 @@ export function Projects() {
       <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p, i) => (
           <li key={p.slug}>
-            <Reveal delay={(i % 3) * 70} className="h-full">
+            <Reveal delay={Math.min(i * 60, 300)} className="h-full">
               <ProjectCard project={p} />
             </Reveal>
           </li>

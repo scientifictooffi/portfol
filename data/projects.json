@@ -4,8 +4,14 @@
     {
       "slug": "fbsm-live",
       "title": "FBSM Live",
-      "summary": "Live-commerce маркетплейс для Fashion Brand Square (Южная Корея): стриминг, realtime-чат и checkout. В проде у 5 000+ пользователей; EPAY-платежи и рост engagement на 30% во время эфиров.",
-      "role": "Junior React Native Developer · SoftSale",
+      "summary": "Live-commerce маркетплейс для Fashion Brand Square (Южная Корея): стриминг, realtime-чат и checkout.",
+      "highlight": "5 000+ активных пользователей",
+      "highlights": [
+        "Интегрировал платежи EPAY — 5 000+ активных пользователей в проде.",
+        "Реализовал live-стриминг и realtime-чат: +30% engagement во время распродаж.",
+        "Оптимизировал API и кэширование: −20% времени загрузки экранов."
+      ],
+      "role": "React Native Developer · SoftSale",
       "year": "2025",
       "tags": ["React Native", "TypeScript", "Redux", "EPAY", "WebSocket"],
       "featured": true,
@@ -14,7 +20,14 @@
     {
       "slug": "trainaut",
       "title": "App for Parents of Children with Autism",
-      "summary": "Мобильное приложение для родителей детей с РАС: UI, интеграция SDK, тестирование и roadmap. Параллельно — Email / Facebook / Google Ads для роста видимости.",
+      "summary": "Мобильное приложение для родителей детей с РАС: UI, интеграция SDK, тестирование и roadmap.",
+      "highlight": "Продуктовый roadmap с нуля",
+      "highlights": [
+        "Управлял разработкой и тестированием мобильного приложения для родителей детей с РАС.",
+        "Спроектировал UI и интегрировал сторонние SDK.",
+        "Запустил маркетинг для роста видимости: Email, Facebook и Google Ads.",
+        "Сформировал продуктовый roadmap с нуля."
+      ],
       "role": "Project Manager · TrainAut",
       "year": "2021–2022",
       "tags": ["Mobile", "UI", "SDK", "Marketing"],
@@ -25,6 +38,12 @@
       "slug": "maman-fest-2025",
       "title": "MAMAN FEST 2025",
       "summary": "Крупная выставка и ярмарка вакансий с участием Президента РК: 130+ компаний, организация хакатонов для привлечения молодых специалистов.",
+      "highlight": "130+ компаний-участников",
+      "highlights": [
+        "Организовал выставку и ярмарку вакансий с участием Президента Казахстана.",
+        "Привлёк 130+ компаний-партнёров.",
+        "Провёл хакатоны для привлечения молодых специалистов."
+      ],
       "role": "Project Manager · ADAM MEDIA",
       "year": "2025",
       "tags": ["Events", "Hackathons", "Partnerships"],
@@ -35,6 +54,12 @@
       "slug": "bolashaq-volunteer",
       "title": "Business Training “Bolashaq”",
       "summary": "Координация волонтёров и логистики мероприятий, распределение задач и подготовка материалов для воркшопов и семинаров.",
+      "highlight": "Полный цикл логистики",
+      "highlights": [
+        "Координировал волонтёров и логистику мероприятий.",
+        "Распределял задачи между командой волонтёров.",
+        "Готовил обучающие материалы для воркшопов и семинаров."
+      ],
       "role": "Volunteer Coordinator",
       "year": "2022",
       "tags": ["Events", "Coordination"],

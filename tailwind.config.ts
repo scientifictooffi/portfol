@@ -26,6 +26,8 @@ const config: Config = {
         "accent-hover": "var(--accent-hover)",
         "accent-contrast": "var(--accent-contrast)",
         "accent-soft": "var(--accent-soft)",
+        "accent-secondary": "var(--accent-secondary)",
+        "accent-secondary-soft": "var(--accent-secondary-soft)",
       },
       fontFamily: {
         // Latin from skill fonts; system-ui covers the Cyrillic UI copy.
