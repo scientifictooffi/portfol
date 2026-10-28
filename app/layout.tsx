@@ -1,20 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
 import { profile } from "@/data/profile";
 import "./globals.css";
-
-const sans = Inter({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const display = Manrope({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
 
 const title = `${profile.name} — ${profile.role}`;
 
@@ -32,7 +18,15 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${sans.variable} ${display.variable}`}>
+    <html lang="ru">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans">{children}</body>
     </html>
   );

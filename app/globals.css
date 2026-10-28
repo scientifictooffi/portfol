@@ -4,6 +4,8 @@
 
 /* Тёплая палитра: кремовый фон, тёплый графит, терракотовый акцент. */
 :root {
+  --font-sans: "Inter";
+  --font-display: "Manrope";
   --bg: #f4f1ea;
   --surface: #faf7f1;
   --surface-2: #ece7dd;
