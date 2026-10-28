@@ -1,46 +1,16 @@
 import { Section } from "@/components/ui/Section";
-import { Reveal } from "@/components/ui/Reveal";
-import { Tag } from "@/components/ui/Tag";
 import { profile } from "@/data/profile";
 
+/** Первый абзац крупно и широко, остальные уже и сдвинуты вправо. */
 export function About() {
+  const [lead, ...rest] = profile.about;
   return (
-    <Section id="about" headingId="about-heading" eyebrow="Обо мне" title="Коротко о подходе">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr]">
-        <Reveal>
-            <div className="max-w-prose space-y-5 text-body-lg text-text-muted">
-              {profile.about.map((para, i) => (
-                <p key={`about-${i}`}>{para}</p>
-              ))}
-            </div>
-        </Reveal>
-
-        <Reveal delay={80}>
-          <dl className="space-y-6 rounded-card border border-border bg-surface p-6">
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-[0.14em] text-text-faint">
-                Локация
-              </dt>
-              <dd className="mt-1 text-text">{profile.location}</dd>
-            </div>
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-[0.14em] text-text-faint">
-                Роль
-              </dt>
-              <dd className="mt-1 text-text">{profile.role}</dd>
-            </div>
-            <div>
-              <dt className="font-mono text-xs uppercase tracking-[0.14em] text-text-faint">
-                Стек
-              </dt>
-              <dd className="mt-2 flex flex-wrap gap-1.5">
-                {profile.stack.map((t, i) => (
-                  <Tag key={`${t}-${i}`}>{t}</Tag>
-                ))}
-              </dd>
-            </div>
-          </dl>
-        </Reveal>
+    <Section id="about" title="обо мне" className="pb-24 pt-6 sm:pb-32">
+      <p className="max-w-[46rem] font-display text-xl font-medium leading-[1.5] text-text sm:text-[1.6rem]">{lead}</p>
+      <div className="mt-10 max-w-[38rem] space-y-5 text-[1.05rem] leading-[1.65] text-text-muted sm:ml-[22%]">
+        {rest.map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
       </div>
     </Section>
   );

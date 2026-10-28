@@ -1,52 +1,36 @@
 import { Section } from "@/components/ui/Section";
-import { Reveal } from "@/components/ui/Reveal";
-import { Button } from "@/components/ui/Button";
+import { CopyButton } from "@/components/ui/CopyButton";
 import { profile } from "@/data/profile";
 
 export function Contact() {
   return (
-    <Section id="contact" headingId="contact-heading" className="pb-28 lg:pb-36">
-      <Reveal>
-        <div className="rounded-card border border-border bg-surface p-8 sm:p-12">
-          <p className="font-mono text-xs uppercase tracking-[0.16em] text-text-muted">
-            Контакты
-          </p>
-          <h2 id="contact-heading" className="mt-4 max-w-2xl text-balance font-display text-h1 font-bold">
-            Обсудим ваш проект?
-          </h2>
-          <p className="mt-4 max-w-xl text-body-lg text-text-muted">
-            Открыт для интересных задач и сотрудничества. Лучший способ связаться — почта
-            или соцсети ниже.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Button href={`mailto:${profile.email}`}>{profile.email}</Button>
-            {profile.resumeUrl && (
-              <Button href={profile.resumeUrl} variant="secondary" external>
-                Резюме / CV
-              </Button>
-            )}
+    <Section id="contact" title="контакты" className="pb-20 sm:pb-24">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
+        <p className="font-display text-2xl font-semibold leading-[1.3] text-text sm:text-[2rem]">{profile.contactNote}</p>
+        <div className="lg:pt-2">
+          <div className="flex flex-wrap items-center gap-3">
+            <a href={`mailto:${profile.email}`} className="btn-primary link-arrow">
+              <span>{profile.email}</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <CopyButton value={profile.email} />
           </div>
-
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[15px]">
             {profile.socials.map((s) => (
               <li key={s.label}>
-                <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1 rounded font-mono text-sm text-text-muted transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
-                >
-                  {s.label}
-                  <span className="text-text-faint transition-colors group-hover:text-accent" aria-hidden="true">
-                    ↗
-                  </span>
+                <a href={s.href} target="_blank" rel="noopener noreferrer" className="link text-text-muted">
+                  {s.label.toLowerCase()}
                 </a>
               </li>
             ))}
+            <li>
+              <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" className="link text-text-muted">
+                резюме (pdf)
+              </a>
+            </li>
           </ul>
         </div>
-      </Reveal>
+      </div>
     </Section>
   );
 }

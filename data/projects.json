@@ -1,70 +1,120 @@
 {
-  "$comment": "Проекты из CV Yerlan Aubakirov. featured поднимает карточку; пустые links скрываются.",
+  "$comment": "Проекты из LinkedIn/CV. Первый — главный (крупная карточка).",
   "items": [
     {
       "slug": "fbsm-live",
       "title": "FBSM Live",
-      "summary": "Live-commerce маркетплейс для Fashion Brand Square (Южная Корея): стриминг, realtime-чат и checkout.",
-      "highlight": "5 000+ активных пользователей",
+      "summary": "Live-commerce маркетплейс для Fashion Brand Square, южнокорейского ритейл-холдинга: люди смотрят прямые эфиры и покупают прямо из них. В проде для 5 000+ пользователей, распространяется приватно (B2B), поэтому в сторах его нет.",
       "highlights": [
-        "Интегрировал платежи EPAY — 5 000+ активных пользователей в проде.",
-        "Реализовал live-стриминг и realtime-чат: +30% engagement во время распродаж.",
-        "Оптимизировал API и кэширование: −20% времени загрузки экранов."
+        "Интегрировал платёжный шлюз EPAY — безопасные транзакции для 5 000+ активных пользователей.",
+        "Собрал live-стриминг и чат в реальном времени: +30% вовлечённости во время распродаж.",
+        "Оптимизировал REST-запросы и добавил кэширование: экраны открываются на ~20% быстрее."
       ],
-      "role": "React Native Developer · SoftSale",
-      "year": "2025",
-      "tags": ["React Native", "TypeScript", "Redux", "EPAY", "WebSocket"],
+      "role": "react native developer · SoftSale",
+      "year": "2025 —",
+      "tags": [
+        "React Native",
+        "TypeScript",
+        "EPAY",
+        "WebSocket"
+      ],
       "featured": true,
-      "links": { "live": "", "repo": "", "caseStudy": "" }
+      "links": {
+        "live": "",
+        "repo": "",
+        "caseStudy": ""
+      }
+    },
+    {
+      "slug": "qarqyn",
+      "title": "Qarqyn",
+      "summary": "Викторина и тренажёр для мозга в App Store: дуэли 1 на 1 с подбором соперника, рейтинг и ранги, персонаж меняется с ростом уровня. Контент на казахском и русском.",
+      "highlights": [
+        "Матч-флоу: выбор категории, автоподбор соперника, дуэль на синхронных вопросах с таймером.",
+        "Рейтинг и прогресс рангов, история матчей, реванши."
+      ],
+      "role": "react native developer · SoftSale",
+      "year": "2025–2026",
+      "tags": [
+        "React Native",
+        "TypeScript"
+      ],
+      "featured": false,
+      "links": {
+        "live": "",
+        "repo": "",
+        "caseStudy": ""
+      }
+    },
+    {
+      "slug": "espressoday",
+      "title": "EspressoDay",
+      "summary": "Приложение заказов и лояльности для сети из 130 кофеен. Делал внутренние модули и участвовал в архитектуре, которая позволяет добавлять новые точки без пересборки продукта.",
+      "highlights": [],
+      "role": "react native developer · SoftSale",
+      "year": "2026",
+      "tags": [
+        "React Native"
+      ],
+      "featured": false,
+      "links": {
+        "live": "",
+        "repo": "",
+        "caseStudy": ""
+      }
+    },
+    {
+      "slug": "echoid",
+      "title": "EchoID — дипломный проект",
+      "summary": "Система цифровой идентичности на zero-knowledge proof: пользователь подтверждает возраст или место работы, не раскрывая сам документ. Защитил на отлично в Astana IT University.",
+      "highlights": [],
+      "role": "бакалаврская работа · 2025",
+      "year": "2025",
+      "tags": [
+        "ZKP",
+        "Identity"
+      ],
+      "featured": false,
+      "links": {
+        "live": "",
+        "repo": "",
+        "caseStudy": ""
+      }
     },
     {
       "slug": "trainaut",
-      "title": "App for Parents of Children with Autism",
-      "summary": "Мобильное приложение для родителей детей с РАС: UI, интеграция SDK, тестирование и roadmap.",
-      "highlight": "Продуктовый roadmap с нуля",
-      "highlights": [
-        "Управлял разработкой и тестированием мобильного приложения для родителей детей с РАС.",
-        "Спроектировал UI и интегрировал сторонние SDK.",
-        "Запустил маркетинг для роста видимости: Email, Facebook и Google Ads.",
-        "Сформировал продуктовый roadmap с нуля."
-      ],
-      "role": "Project Manager · TrainAut",
+      "title": "TrainAut",
+      "summary": "Мобильное приложение для родителей детей с аутизмом. Вёл разработку от требований до релиза, спроектировал интерфейс, подключил сторонние SDK.",
+      "highlights": [],
+      "role": "project manager · TrainAut",
       "year": "2021–2022",
-      "tags": ["Mobile", "UI", "SDK", "Marketing"],
-      "featured": true,
-      "links": { "live": "", "repo": "", "caseStudy": "" }
+      "tags": [
+        "Mobile",
+        "UI"
+      ],
+      "featured": false,
+      "links": {
+        "live": "",
+        "repo": "",
+        "caseStudy": ""
+      }
     },
     {
       "slug": "maman-fest-2025",
       "title": "MAMAN FEST 2025",
-      "summary": "Крупная выставка и ярмарка вакансий с участием Президента РК: 130+ компаний, организация хакатонов для привлечения молодых специалистов.",
-      "highlight": "130+ компаний-участников",
-      "highlights": [
-        "Организовал выставку и ярмарку вакансий с участием Президента Казахстана.",
-        "Привлёк 130+ компаний-партнёров.",
-        "Провёл хакатоны для привлечения молодых специалистов."
-      ],
-      "role": "Project Manager · ADAM MEDIA",
+      "summary": "Национальная выставка и ярмарка вакансий на 130+ компаний с участием Президента Казахстана. Организация, партнёры, хакатоны для студентов.",
+      "highlights": [],
+      "role": "project manager · ADAM MEDIA",
       "year": "2025",
-      "tags": ["Events", "Hackathons", "Partnerships"],
-      "featured": false,
-      "links": { "live": "", "repo": "", "caseStudy": "" }
-    },
-    {
-      "slug": "bolashaq-volunteer",
-      "title": "Business Training “Bolashaq”",
-      "summary": "Координация волонтёров и логистики мероприятий, распределение задач и подготовка материалов для воркшопов и семинаров.",
-      "highlight": "Полный цикл логистики",
-      "highlights": [
-        "Координировал волонтёров и логистику мероприятий.",
-        "Распределял задачи между командой волонтёров.",
-        "Готовил обучающие материалы для воркшопов и семинаров."
+      "tags": [
+        "Events"
       ],
-      "role": "Volunteer Coordinator",
-      "year": "2022",
-      "tags": ["Events", "Coordination"],
       "featured": false,
-      "links": { "live": "", "repo": "", "caseStudy": "" }
+      "links": {
+        "live": "",
+        "repo": "",
+        "caseStudy": ""
+      }
     }
   ]
 }

@@ -1,73 +1,52 @@
 /**
- * PROFILE — источник личных данных (из CV Yerlan Aubakirov).
+ * PROFILE — личные данные (из CV Yerlan Aubakirov, октябрь 2026).
+ * Тексты от первого лица, без маркетинговых формулировок.
  */
 
-export type SocialLink = {
-  label: string;
-  href: string;
-  /** показывать в футере/контактах */
-  primary?: boolean;
-};
+export type SocialLink = { label: string; href: string };
 
 export type Profile = {
   name: string;
+  shortName: string;
   role: string;
-  /** короткая фраза-позиционирование под именем в hero (1 предложение) */
+  /** главное утверждение на первом экране */
+  headline: string;
+  /** вторая строка под ним */
   tagline: string;
-  /** акцентное слово внутри заголовка hero (вариант A) */
-  accentWord: string;
-  /** доступность для работы — управляет статус-чипом */
-  availability: {
-    open: boolean;
-    label: string;
-  };
+  /** фраза перед контактами */
+  contactNote: string;
   location: string;
+  locationRu: string;
   email: string;
-  /** 2–3 абзаца для секции About */
+  phone?: string;
   about: string[];
-  /** основной стек — рендерится в hero и в About */
-  stack: string[];
+  languages: string[];
   socials: SocialLink[];
-  /** ссылка на резюме/CV */
   resumeUrl: string;
 };
 
 export const profile: Profile = {
   name: "Yerlan Aubakirov",
-  role: "React Native / Front-End Developer",
+  shortName: "Ерлан Аубакиров",
+  role: "React Native Developer",
+  headline:
+    "Делаю мобильные приложения, в которых платежи проходят, стримы не падают, а экраны открываются *быстро*. Сейчас это live-commerce маркетплейс для корейского ритейла. До этого несколько лет вёл проекты и научился смотреть на продукт глазами того, кто за него платит.",
   tagline:
-    "Разрабатываю production-приложения для iOS и Android: live-commerce, платежи и realtime — с фокусом на скорость и стабильность.",
-  accentWord: "продакшен",
-  availability: {
-    open: true,
-    label: "Открыт к предложениям · Relocation & Remote",
-  },
-  location: "Astana, Kazakhstan",
+    "React Native, TypeScript, платежи, realtime. Открыт к новым проектам в UK и удалённо.",
+  contactNote: "Если у вас есть задача на React Native или фронтенд — напишите, отвечу в тот же день.",
+  location: "Leicester, United Kingdom",
+  locationRu: "Лестер, UK",
   email: "yerlanaubakirovvv@gmail.com",
+  phone: "+7 700 651 1043",
   about: [
-    "1+ год production-опыта в React Native: live-commerce платформы, интеграция платежей (EPAY), международные проекты. Пишу на React, React Native и TypeScript; базово — Node.js и SQL.",
-    "В SoftSale разрабатываю FBSM Live для южнокорейского холдинга Fashion Brand Square: стриминг, чат и checkout в одном приложении для 5 000+ пользователей. Ускорил загрузку экранов на ~20% за счёт оптимизации API и кэша.",
-    "BSc Software Engineering (Astana IT University, Honours, GPA 3.72), сейчас MSc Information Systems. Сертификаты: EPAM Front-End, AWS Cloud Foundations; английский — B2 (IELTS 6.0).",
+    "Пишу на React Native и TypeScript с 2025 года в SoftSale. Основной продукт — FBSM Live, приложение для Fashion Brand Square, южнокорейского ритейл-холдинга: там люди смотрят прямые эфиры и покупают прямо из них. Я интегрировал платёжный шлюз EPAY, собрал стриминг и чат в реальном времени, а потом занялся скоростью: после оптимизации запросов и кэша экраны стали открываться примерно на 20% быстрее. Параллельно выпускали Qarqyn, PvP-викторину в App Store, и приложение для сети кофеен EspressoDay.",
+    "До разработки несколько лет вёл проекты: мобильное приложение для родителей детей с аутизмом, выставку MAMAN FEST на 130 компаний, студенческие хакатоны. Поэтому понимаю, как продукт выглядит со стороны заказчика, и не теряюсь, когда нужно договориться о сроках и приоритетах.",
+    "Закончил бакалавриат по Software Engineering в Astana IT University, сейчас учусь на магистратуре Advanced Software Engineering в University of Leicester. В работе каждый день пользуюсь Claude Code и Cursor — быстро проверять идеи это нормально, а вот сдавать непроверенное — нет.",
   ],
-  stack: [
-    "TypeScript",
-    "React Native",
-    "React",
-    "Next.js",
-    "Redux",
-    "REST / WebSocket",
-  ],
+  languages: ["английский (professional)", "русский", "казахский"],
   socials: [
-    {
-      label: "GitHub",
-      href: "https://github.com/scientifictooffi",
-      primary: true,
-    },
-    {
-      label: "LinkedIn",
-      href: "https://linkedin.com/in/tadamsk",
-      primary: true,
-    },
+    { label: "GitHub", href: "https://github.com/scientifictooffi" },
+    { label: "LinkedIn", href: "https://linkedin.com/in/tadamsk" },
   ],
   resumeUrl: "/resume.pdf",
 };
