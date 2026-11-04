@@ -1,22 +1,21 @@
 {
-  "$comment": "Проекты из LinkedIn/CV. Первый — главный (крупная карточка).",
+  "$comment": "Projects from LinkedIn/CV. First one is featured (large card); the rest are expandable rows in this order.",
   "items": [
     {
-      "slug": "fbsm-live",
-      "title": "FBSM Live",
-      "summary": "Live-commerce маркетплейс для Fashion Brand Square, южнокорейского ритейл-холдинга: люди смотрят прямые эфиры и покупают прямо из них. В проде для 5 000+ пользователей, распространяется приватно (B2B), поэтому в сторах его нет.",
+      "slug": "espressoday",
+      "title": "EspressoDay",
+      "summary": "Ordering and loyalty app for EspressoDay, a chain of 130 coffee shops in Kazakhstan: menu, order ahead, bonuses and a loyalty card in one place. On the App Store.",
       "highlights": [
-        "Интегрировал платёжный шлюз EPAY — безопасные транзакции для 5 000+ активных пользователей.",
-        "Собрал live-стриминг и чат в реальном времени: +30% вовлечённости во время распродаж.",
-        "Оптимизировал REST-запросы и добавил кэширование: экраны открываются на ~20% быстрее."
+        "Built internal modules of the app in React Native and TypeScript.",
+        "Contributed to an architecture that lets new locations be added without rebuilding the product.",
+        "Code review and bug fixing before every release."
       ],
       "role": "react native developer · SoftSale",
-      "year": "2025 —",
+      "year": "2026 —",
       "tags": [
         "React Native",
         "TypeScript",
-        "EPAY",
-        "WebSocket"
+        "Loyalty"
       ],
       "featured": true,
       "links": {
@@ -26,12 +25,36 @@
       }
     },
     {
+      "slug": "fbsm-live",
+      "title": "FBSM Live",
+      "summary": "Live-commerce marketplace for Fashion Brand Square, a South Korean retail holding: people watch live streams and buy straight from them. In production for 5,000+ users, distributed privately (B2B), so it is not in the public stores.",
+      "highlights": [
+        "Integrated the EPAY payment gateway: secure transactions for 5,000+ active users.",
+        "Built live streaming and real-time chat: +30% engagement during sales events.",
+        "Optimised REST requests and added caching: screens open about 20% faster."
+      ],
+      "role": "react native developer · SoftSale",
+      "year": "2025 —",
+      "tags": [
+        "React Native",
+        "TypeScript",
+        "EPAY",
+        "WebSocket"
+      ],
+      "featured": false,
+      "links": {
+        "live": "",
+        "repo": "",
+        "caseStudy": ""
+      }
+    },
+    {
       "slug": "qarqyn",
       "title": "Qarqyn",
-      "summary": "Викторина и тренажёр для мозга в App Store: дуэли 1 на 1 с подбором соперника, рейтинг и ранги, персонаж меняется с ростом уровня. Контент на казахском и русском.",
+      "summary": "Trivia and brain-training game on the App Store: 1-on-1 duels with opponent matching, rating and ranks, a character that evolves with your level. Content in Kazakh and Russian.",
       "highlights": [
-        "Матч-флоу: выбор категории, автоподбор соперника, дуэль на синхронных вопросах с таймером.",
-        "Рейтинг и прогресс рангов, история матчей, реванши."
+        "Match flow: category selection, automatic opponent matching, timed duel on synchronised questions.",
+        "Rating and rank progression, match history, rematches."
       ],
       "role": "react native developer · SoftSale",
       "year": "2025–2026",
@@ -47,28 +70,11 @@
       }
     },
     {
-      "slug": "espressoday",
-      "title": "EspressoDay",
-      "summary": "Приложение заказов и лояльности для сети из 130 кофеен. Делал внутренние модули и участвовал в архитектуре, которая позволяет добавлять новые точки без пересборки продукта.",
-      "highlights": [],
-      "role": "react native developer · SoftSale",
-      "year": "2026",
-      "tags": [
-        "React Native"
-      ],
-      "featured": false,
-      "links": {
-        "live": "",
-        "repo": "",
-        "caseStudy": ""
-      }
-    },
-    {
       "slug": "echoid",
-      "title": "EchoID — дипломный проект",
-      "summary": "Система цифровой идентичности на zero-knowledge proof: пользователь подтверждает возраст или место работы, не раскрывая сам документ. Защитил на отлично в Astana IT University.",
+      "title": "EchoID — thesis project",
+      "summary": "Digital identity system on zero-knowledge proofs: a user proves their age or employer without revealing the document itself. Defended with top marks at Astana IT University.",
       "highlights": [],
-      "role": "бакалаврская работа · 2025",
+      "role": "bachelor's thesis · 2025",
       "year": "2025",
       "tags": [
         "ZKP",
@@ -84,7 +90,7 @@
     {
       "slug": "trainaut",
       "title": "TrainAut",
-      "summary": "Мобильное приложение для родителей детей с аутизмом. Вёл разработку от требований до релиза, спроектировал интерфейс, подключил сторонние SDK.",
+      "summary": "Mobile app for parents of children with autism. Led development from requirements to release, designed the interface, integrated third-party SDKs.",
       "highlights": [],
       "role": "project manager · TrainAut",
       "year": "2021–2022",
@@ -102,7 +108,7 @@
     {
       "slug": "maman-fest-2025",
       "title": "MAMAN FEST 2025",
-      "summary": "Национальная выставка и ярмарка вакансий на 130+ компаний с участием Президента Казахстана. Организация, партнёры, хакатоны для студентов.",
+      "summary": "National exhibition and job fair with 130+ companies, attended by the President of Kazakhstan. Organisation, partners, hackathons for students.",
       "highlights": [],
       "role": "project manager · ADAM MEDIA",
       "year": "2025",

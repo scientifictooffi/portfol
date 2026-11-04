@@ -1,9 +1,6 @@
 import { cn } from "@/lib/cn";
 
-/**
- * Секция без жёсткой сетки: подпись сверху, контент ниже.
- * Отступы задаются снаружи, чтобы ритм страницы не был одинаковым.
- */
+/** Section: caption on top, content below. Spacing is set by the caller so the page rhythm varies. */
 export function Section({
   id,
   title,

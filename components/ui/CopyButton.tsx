@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { CheckIcon, CopyIcon } from "./Icons";
 
-export function CopyButton({ value, label = "скопировать" }: { value: string; label?: string }) {
+export function CopyButton({ value, label = "copy" }: { value: string; label?: string }) {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function CopyButton({ value, label = "скопировать" }: { value:
   return (
     <button type="button" onClick={copy} aria-label={`${label}: ${value}`} className="btn-secondary">
       {copied ? <CheckIcon size={15} /> : <CopyIcon size={15} />}
-      <span aria-live="polite">{copied ? "скопировано" : label}</span>
+      <span aria-live="polite">{copied ? "copied" : label}</span>
     </button>
   );
 }

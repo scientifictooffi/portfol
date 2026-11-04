@@ -21,14 +21,14 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-sans)", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
       },
       borderRadius: {
         card: "16px",
       },
       maxWidth: {
         prose: "44rem",
-        page: "64rem",
+        page: "84rem",
       },
       transitionTimingFunction: {
         "out-soft": "cubic-bezier(0.23, 1, 0.32, 1)",

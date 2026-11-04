@@ -18,11 +18,11 @@ export default function OpenGraphImage() {
           padding: 80,
           background: "#f4f1ea",
           color: "#1a1918",
-          fontFamily: "system-ui, sans-serif",
+          fontFamily: "Georgia, serif",
         }}
       >
         <div style={{ fontSize: 28, color: "#65605a" }}>{profile.shortName}</div>
-        <div style={{ fontSize: 46, lineHeight: 1.15, letterSpacing: -2, maxWidth: 1000 }}>{profile.headline}</div>
+        <div style={{ fontSize: 46, lineHeight: 1.15, letterSpacing: -1, maxWidth: 1000 }}>{profile.headline}</div>
         <div style={{ fontSize: 26, color: "#65605a" }}>{profile.email}</div>
       </div>
     ),

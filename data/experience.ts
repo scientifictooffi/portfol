@@ -1,5 +1,5 @@
 /**
- * EXPERIENCE / SKILLS / CERTIFICATIONS — данные из CV Yerlan Aubakirov (октябрь 2026).
+ * EXPERIENCE / SKILLS / CERTIFICATIONS — from Yerlan Aubakirov's CV (October 2026).
  */
 
 export type ExperienceItem = {
@@ -7,7 +7,7 @@ export type ExperienceItem = {
   role: string;
   period: string;
   location?: string;
-  /** текущее место работы — подсвечивается в таймлайне */
+  /** current job, shown large */
   current?: boolean;
   bullets: string[];
   tags?: string[];
@@ -17,51 +17,51 @@ export const experience: ExperienceItem[] = [
   {
     company: "SoftSale",
     role: "React Native Developer",
-    period: "Май 2025 — сейчас",
+    period: "May 2025 — now",
     location: "Astana, Kazakhstan · Remote",
     current: true,
     bullets: [
-      "FBSM Live — live-commerce маркетплейс для Fashion Brand Square (Южная Корея): платежи EPAY для 5 000+ пользователей, live-стриминг и чат (+30% вовлечённости), оптимизация API и кэш (−20% времени загрузки).",
-      "Qarqyn — PvP-викторина в App Store: подбор соперника, дуэли на синхронных вопросах, рейтинг и ранги, история матчей.",
-      "EspressoDay — приложение заказов и лояльности для 130 кофеен: внутренние модули, масштабируемая архитектура, code review и багфикс перед релизом.",
-      "Работа в Agile-команде через GitHub: feature-ветки, pull requests, code review.",
+      "FBSM Live, a live-commerce marketplace for Fashion Brand Square (South Korea): EPAY payments for 5,000+ users, live streaming and chat (+30% engagement), API optimisation and caching (−20% load time).",
+      "Qarqyn, a PvP trivia game on the App Store: opponent matching, duels on synchronised questions, rating and ranks, match history.",
+      "EspressoDay, an ordering and loyalty app for 130 coffee shops: internal modules, scalable architecture, code review and bug fixing before release.",
+      "Agile team on GitHub: feature branches, pull requests, code review.",
     ],
     tags: ["React Native", "TypeScript", "WebSocket", "EPAY", "REST API"],
   },
   {
     company: "BI Education",
     role: "Frontend Developer",
-    period: "Март — Апрель 2026",
+    period: "March — April 2026",
     location: "Kazakhstan · Part-time",
-    bullets: ["Фронтенд-разработка для образовательной платформы, частичная занятость параллельно с SoftSale."],
+    bullets: ["Frontend development for an education platform, part-time alongside SoftSale."],
     tags: ["React", "TypeScript"],
   },
   {
     company: "ADAM MEDIA",
     role: "Project Manager",
-    period: "Январь — Март 2025",
+    period: "January — March 2025",
     location: "Astana, Kazakhstan",
     bullets: [
-      "Организовал MAMAN FEST 2025 — национальную выставку и ярмарку вакансий с участием Президента Казахстана и 130+ компаний-партнёров.",
-      "Спланировал и провёл хакатоны для студентов и начинающих специалистов.",
+      "Organised MAMAN FEST 2025, a national exhibition and job fair attended by the President of Kazakhstan, with 130+ partner companies.",
+      "Planned and ran hackathons for students and junior specialists.",
     ],
     tags: ["Events", "Hackathons"],
   },
   {
     company: "Business Training Bolashaq",
     role: "Volunteer Coordinator",
-    period: "Июнь — Август 2022",
-    location: "Astana, Kazakhstan · Стажировка",
-    bullets: ["Координировал волонтёров и логистику мероприятий, готовил материалы для воркшопов и семинаров."],
+    period: "June — August 2022",
+    location: "Astana, Kazakhstan · Internship",
+    bullets: ["Coordinated volunteers and event logistics, prepared materials for workshops and seminars."],
     tags: ["Coordination"],
   },
   {
     company: "TrainAut",
     role: "Project Manager",
-    period: "2021 — Февраль 2022",
+    period: "2021 — February 2022",
     location: "Pavlodar, Kazakhstan",
     bullets: [
-      "Вёл разработку и тестирование мобильного приложения для родителей детей с РАС — от требований до релиза, UI и интеграция SDK.",
+      "Led development and testing of a mobile app for parents of children with autism, from requirements to release, UI and SDK integration.",
     ],
     tags: ["Mobile", "UI"],
   },
@@ -74,27 +74,27 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    label: "языки",
+    label: "languages",
     items: ["JavaScript", "TypeScript", "Java", "Python", "SQL", "C++"],
   },
   {
-    label: "фронтенд и мобайл",
+    label: "frontend & mobile",
     items: ["React", "React Native", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "Responsive Design"],
   },
   {
-    label: "бэкенд и api",
+    label: "backend & api",
     items: ["Node.js", "REST API", "WebSocket", "Real-Time Streaming", "Payment Gateway Integration"],
   },
   {
-    label: "базы данных",
-    items: ["MySQL", "MS SQL Server", "Oracle", "PostgreSQL (базово)"],
+    label: "databases",
+    items: ["MySQL", "MS SQL Server", "Oracle", "PostgreSQL (basic)"],
   },
   {
-    label: "инструменты",
+    label: "tools",
     items: ["Git", "GitHub", "Pull Requests", "Code Review", "Agile / Scrum", "Unit Testing", "Vite", "Vercel", "Firebase", "AWS", "Linux", "DataGrip", "Jupyter"],
   },
   {
-    label: "ai-инструменты",
+    label: "ai tools",
     items: ["Claude Code", "Cursor", "GitHub Copilot", "Prompt Engineering", "Rapid Prototyping"],
   },
 ];
@@ -135,6 +135,6 @@ export const education: EducationItem[] = [
 ];
 
 export const activities: string[] = [
-  "Markethon 5.0 и Blockchain Hackathon — участник, Astana",
-  "Work and Travel Program — New York, USA",
+  "Markethon 5.0 and Blockchain Hackathon, participant, Astana",
+  "Work and Travel Program, New York, USA",
 ];

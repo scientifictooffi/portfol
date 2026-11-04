@@ -19,7 +19,7 @@ export type Project = {
   links: ProjectLinks;
 };
 
-/** Typed, sorted access to project stubs (featured first). */
+/** Typed access to projects; featured first, then in file order. */
 export const projects: Project[] = (raw.items as Project[])
   .slice()
   .sort((a, b) => Number(b.featured) - Number(a.featured));

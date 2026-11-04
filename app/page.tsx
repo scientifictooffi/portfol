@@ -13,7 +13,7 @@ export default function Home() {
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-bg focus:px-3 focus:py-2"
       >
-        Перейти к содержимому
+        Skip to content
       </a>
       <main id="main" className="mx-auto w-full max-w-page px-5 sm:px-8">
         <Intro />

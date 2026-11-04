@@ -1,11 +1,13 @@
 import { profile } from "@/data/profile";
+import { LocalTime } from "@/components/ui/LocalTime";
 
 export function Footer() {
   return (
     <footer className="mx-auto w-full max-w-page px-5 sm:px-8">
       <div className="flex flex-col gap-3 border-t border-border py-10 mt-6 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
-        <p>
-          © {new Date().getFullYear()} {profile.name}
+        <p className="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <span>© {new Date().getFullYear()} {profile.name}</span>
+          <LocalTime />
         </p>
         <ul className="flex gap-5">
           {profile.socials.map((s) => (
@@ -17,7 +19,7 @@ export function Footer() {
           ))}
           <li>
             <a href="#top" className="link">
-              наверх
+              top
             </a>
           </li>
         </ul>

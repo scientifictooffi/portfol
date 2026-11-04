@@ -2,22 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Тёплая палитра: кремовый фон, тёплый графит, терракотовый акцент. */
+/* Warm palette: cream background, warm graphite text, terracotta accent. */
 :root {
-  --font-sans: "Inter";
-  --font-display: "Manrope";
   --bg: #f4f1ea;
-  --surface: #faf7f1;
-  --surface-2: #ece7dd;
+  --surface: rgba(252, 249, 243, 0.55);
+  --surface-2: rgba(236, 231, 221, 0.6);
   --text: #1a1918;
   --text-muted: #65605a;
-  --text-faint: #9c968c;
+  --text-faint: #8a8378;
   --text-dim: #cfc8bb;
-  --border: #e3ddd2;
-  --accent: #b8603e;
+  --border: rgba(120, 90, 60, 0.16);
+  --accent: #ad5636;
   --accent-hover: #9d4d2d;
   --accent-soft: #f1dfd3;
-  --accent-contrast: #fbf4ec;
+  --accent-contrast: #ffffff;
   --sage: #7d8c74;
   --shadow-soft: 0 1px 2px rgba(60, 40, 20, 0.04), 0 8px 24px -12px rgba(60, 40, 20, 0.14);
   --shadow-lift: 0 2px 4px rgba(60, 40, 20, 0.05), 0 16px 36px -14px rgba(60, 40, 20, 0.2);
@@ -30,9 +28,16 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    /* static stand-in for the shader gradient while it loads */
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(120% 90% at 15% 20%, #e9b59c 0%, rgba(233, 181, 156, 0) 60%),
+      radial-gradient(90% 80% at 100% 100%, #d7d6c6 0%, rgba(215, 214, 198, 0) 60%),
+      linear-gradient(135deg, #eccbb7 0%, #f0d9c8 50%, #efe6d8 100%);
+    background-attachment: fixed;
   }
   body {
-    background-color: var(--bg);
+    background-color: transparent;
     color: var(--text);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -49,6 +54,131 @@
 }
 
 @layer utilities {
+
+  /* The glass library centres its panel with translate(-50%); we want normal flow */
+  .glass-wrap {
+    display: block;
+    position: relative;
+    line-height: 0;
+  }
+  .glass-wrap .glass {
+    line-height: 1.65;
+  }
+  /* hide the library's decorative handles under the panel */
+  .glass-wrap > span {
+    display: none !important;
+  }
+  /* phones: plain frosted glass, no displacement filter */
+  @media (max-width: 767px) {
+    .glass-wrap .glass {
+      filter: none !important;
+      backdrop-filter: blur(12px) saturate(110%) !important;
+      -webkit-backdrop-filter: blur(12px) saturate(110%) !important;
+    }
+  }
+  .glass-wrap > div.relative {
+    transform: none !important;
+  }
+  /* the filter svg is only defs; do not render it */
+  .glass-wrap svg[aria-hidden="true"] {
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden;
+  }
+  /* library overlays (invisible with overLight=false) must not take space in flow */
+  .glass-wrap > div.pointer-events-none {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+  .glass-wrap .glass {
+    box-shadow: 0 2px 4px rgba(60, 40, 20, 0.05), 0 20px 48px -16px rgba(60, 40, 20, 0.28) !important;
+    background: rgba(255, 252, 247, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+  }
+  .glass-static {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: rgba(255, 252, 247, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 2px 4px rgba(60, 40, 20, 0.05), 0 20px 48px -16px rgba(60, 40, 20, 0.28);
+    backdrop-filter: blur(12px) saturate(110%);
+    -webkit-backdrop-filter: blur(12px) saturate(110%);
+  }
+  .glass-wrap .glass > div:last-child {
+    font: inherit !important;
+    color: var(--text) !important;
+    text-shadow: none !important;
+  }
+  /* Page gradient: present on the first frame, drifts slowly. No swap, no fade. */
+  .bg-drift {
+    background:
+      radial-gradient(120% 90% at 15% 20%, #e9b59c 0%, rgba(233, 181, 156, 0) 60%),
+      radial-gradient(90% 80% at 100% 100%, #d7d6c6 0%, rgba(215, 214, 198, 0) 60%),
+      radial-gradient(70% 60% at 70% 30%, #f1d9c9 0%, rgba(241, 217, 201, 0) 70%),
+      linear-gradient(135deg, #eccbb7 0%, #f0d9c8 50%, #efe6d8 100%);
+    background-size: 160% 160%, 160% 160%, 160% 160%, 100% 100%;
+    background-position: 0% 0%, 100% 100%, 50% 50%, 0 0;
+    animation: bg-drift 40s ease-in-out infinite alternate;
+  }
+  @keyframes bg-in {
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes bg-drift {
+    0% {
+      background-position: 0% 0%, 100% 100%, 50% 50%, 0 0;
+    }
+    100% {
+      background-position: 30% 20%, 70% 80%, 30% 70%, 0 0;
+    }
+  }
+  /* Film grain over the whole page, a slightly retro touch */
+  .grain {
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 220px 220px;
+  }
+  /* Portrait: warm tint, slight tilt, grain on top */
+  .portrait img {
+    filter: sepia(0.18) contrast(1.04) saturate(0.95);
+    box-shadow: var(--shadow-lift);
+    transform: rotate(-1.5deg);
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1), filter 400ms ease;
+  }
+  .portrait:hover img {
+    transform: rotate(0deg);
+    filter: sepia(0) contrast(1) saturate(1);
+  }
+  .portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 1.6rem 0;
+    border-radius: 18px;
+    pointer-events: none;
+    opacity: 0.18;
+    mix-blend-mode: multiply;
+    transform: rotate(-1.5deg);
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .portrait:hover::after {
+    transform: rotate(0deg);
+  }
+  /* Contact: soft warm glow behind the glass panel */
+  .contact-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 30%;
+    z-index: -1;
+    background:
+      radial-gradient(55% 60% at 65% 45%, rgba(227, 165, 130, 0.6), transparent 72%),
+      radial-gradient(40% 50% at 90% 85%, rgba(185, 197, 177, 0.55), transparent 72%);
+    filter: blur(36px);
+  }
   .text-balance {
     text-wrap: balance;
   }
@@ -76,15 +206,27 @@
     transform: translateX(3px);
   }
   .btn {
-    @apply inline-flex h-12 cursor-pointer items-center gap-2 rounded-full px-6 text-[15px] font-medium;
+    @apply inline-flex h-11 cursor-pointer items-center gap-2 rounded-full px-5 text-[15px] font-medium sm:h-12 sm:px-6;
     transition: all 0.2s ease;
   }
   .btn-primary:hover {
     transform: translateY(-1px);
   }
-  /* Подпись секции: обычный регистр, короткая терракотовая черта */
+  /* Section caption with a short terracotta dash */
   .label {
-    @apply inline-flex items-center gap-3 font-display text-sm font-medium text-text-muted;
+    @apply inline-flex items-center gap-3 font-display text-lg italic text-text-muted;
+  }
+  /* small caption: Inter, caps, wide tracking */
+  .meta {
+    @apply text-[13px] font-medium uppercase tracking-[0.08em] text-text-faint;
+  }
+  .meta-nav {
+    @apply text-sm font-medium uppercase tracking-[0.08em] text-text-muted;
+  }
+  /* dates and numbers: tabular figures */
+  .num {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
   }
   .label::before {
     content: "";
@@ -92,7 +234,7 @@
     height: 1px;
     background: var(--accent);
   }
-  /* Строка списка с мягкой подложкой при наведении */
+  /* List row with a soft hover background */
   .row {
     transition: all 0.2s ease;
   }
@@ -106,28 +248,20 @@
   .btn-secondary {
     @apply btn bg-surface text-text shadow-soft hover:shadow-lift hover:text-accent;
   }
-  /* Крупное утверждение: слова проявляются по мере скролла */
+  /* Large statement */
   .statement {
-    font-family: var(--font-display), var(--font-sans), sans-serif;
-    font-weight: 600;
-    font-size: clamp(1.5rem, 2.9vw, 2.9rem);
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    max-width: 50rem;
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3.4vw, 3.6rem);
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+    max-width: 68rem;
     text-wrap: pretty;
   }
-  .statement .w {
-    color: var(--text-dim);
-    transition: color 450ms ease-out;
-  }
-  .statement .w.on {
-    color: var(--text);
-  }
-  .statement .w.half {
-    color: var(--text-faint);
+  .statement em {
+    font-style: italic;
   }
   .statement em {
-    font-style: normal;
     color: var(--accent);
   }
 }
@@ -136,8 +270,7 @@
   html {
     scroll-behavior: auto;
   }
-  .statement .w {
-    color: var(--text);
-    transition: none;
+  .bg-drift {
+    animation: none;
   }
 }
