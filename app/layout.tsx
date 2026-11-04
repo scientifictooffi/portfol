@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import { profile } from "@/data/profile";
 import { PageBackground } from "@/components/fx/PageBackground";
 import "./globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans">
         <PageBackground />
         {children}
+        <Analytics />
       </body>
     </html>
   );
