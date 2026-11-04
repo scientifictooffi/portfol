@@ -22,7 +22,7 @@ const playfair = localFont({
 
 const title = `${profile.name} — ${profile.role}`;
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yerlan-aubakirov.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://yerlan.live";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
